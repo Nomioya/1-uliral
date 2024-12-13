@@ -1,5 +1,6 @@
-
+import { useRouter } from "next/router";
 export default function task3(){
+    const router=useRouter();
     return(
         <div className="w-full h-screen flex items-center justify-center bg-black">
      <div className="w-[98%] h-[96%] flex justify-between items-end">
@@ -186,8 +187,12 @@ export default function task3(){
                     <h1 className="font-bold text-slate-400"><span className="text-white">12</span>/-2</h1>
                 </div>
             </div>
+            <div >
+        <button className="bg-gray-600 h-12 w-24 border-2 border-gray-500 hover:bg-gray-100    " onClick={()=>{router.back();}}  >Back</button>
+        </div>
         </div>
        </div>
+       
       </div>
     )
         

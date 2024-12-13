@@ -1,6 +1,7 @@
 import React, {useState} from "react";
-
+import { useRouter } from "next/router";
 export default function task4(){
+   const router=useRouter();
     const [search,setSearch]=useState("");
     console.log("search utga -->",search);
     return(
@@ -14,15 +15,15 @@ export default function task4(){
                 <p className="text-3xl mb-20"> 𝓘𝓷𝓼𝓽𝓪𝓰𝓻𝓪𝓶𝓶 </p>
               </div>
              <div className="flex ">
-             <input type="search" onChange={(test)=> setSearch(test.target.value)}
+             <input type="search" onChange={(test)=> setSearch(test.value)}
              placeholder="Username"
              className="p-2 pr-24 bg-black  border-2 border-gray-800    focus:outlinenone focus:ring-2  focus:ring-blue-1   00">
-           
+
                 </input>
                    
              </div>
              <div>
-             <input type="search" onChange={(test)=> setSearch(test.target.value)}
+             <input type="search" onChange={(test)=> setSearch(test.value)}
              placeholder="Password"
              className=" mt-4 p-2 pr-24  bg-black border-2 border-gray-800    focus:outlinenone focus:ring-2  focus:ring-blue-1   00">
            
@@ -40,8 +41,11 @@ export default function task4(){
              </div>
              </div>
              </div>
+             <div >
+        <button className="bg-gray-600 h-12 w-24 border-2 border-gray-500 hover:bg-gray-100  mt-12 "onClick={()=>{router.back();}}   >Back</button>
+        </div>
               </div>
-        
+              
         </div>
     );
 }
